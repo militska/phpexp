@@ -1,7 +1,11 @@
 <?php
 
+require_once "autoload.php";
 
-echo "tewt";
+
+$router = new Router();
+
+echo($router->getClass());
 
 
-var_export([3,3,4,5]);
+
