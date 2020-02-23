@@ -1,15 +1,18 @@
 version: '3'
 
 services:
+
   web:
     image: nginx:1.17-alpine
     volumes:
-      - ./:/web
+      - .:/web
       - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 8089:80
+    environment:
+      - NGINX_SITE_DOCUMENT_ROOT=/web/public
 
   php:
-    build: ./docker/php
+    build: docker/php
     volumes:
-      - ./:/web
+      - .:/web
