@@ -1,4 +1,5 @@
 <?php
+namespace web\controllers;
 
 class ActionUser {
 

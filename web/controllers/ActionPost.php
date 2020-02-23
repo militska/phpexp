@@ -1,5 +1,7 @@
 <?php
 
+namespace web\controllers;
+
 class ActionPost {
 
     public function __toString()
