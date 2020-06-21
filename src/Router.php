@@ -15,15 +15,14 @@ class Router
      */
     public function __construct($config)
     {
-        $paramsRoute = [];
-
-
-
         include($config);
 
+        $paramsRoute = [];
+
         $action = strtolower(explode("/", $_SERVER['REQUEST_URI'])[1]);
-    ;
-        $this->class = $paramsRoute[$action];
+
+//        $this->class = $paramsRoute[$action];
+        $this->class = ucfirst($action);
     }
 
     /**
