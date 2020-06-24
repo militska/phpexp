@@ -5,32 +5,26 @@ namespace web\controllers;
 
 use mysqli;
 use PDO;
+use src\MariaDbConnect;
 
 class ActionPost {
 
 
-    public function OpenCon()
-    {
-        $dbhost = "db";
-        $dbuser = "root";
-        $dbpass = "example";
-        $db = "test";
-        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
-
-        return $conn;
-    }
-
-    function CloseCon($conn)
-    {
-        $conn->close();
-
-    }
         public function __toString()
     {
 
         try {
+            $conect = new MariaDbConnect("root", "qwerty", "my_db");
+            $link = $conect->getConnect();
+            $sql = 'SELECT * FROM test';
+            foreach ($link->query($sql) as $row) {
+               var_export($row);
+            }
 
-            var_export($this->OpenCon());
+            echo "Соединение с MySQL установлено!" . PHP_EOL;
+            echo "Информация о сервере: " . mysqli_get_host_info($link) . PHP_EOL;
+
+            mysqli_close($link);
 
 
         } catch (\Exception $e)
