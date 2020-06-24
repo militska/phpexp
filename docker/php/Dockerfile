@@ -6,7 +6,7 @@ RUN apk --no-cache update \
     && apk add --update --no-cache autoconf g++ make \
     && pecl install redis && docker-php-ext-enable redis \
     && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql intl \
+    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql  intl \
     && apk del autoconf g++ make
 
 # Install composer
