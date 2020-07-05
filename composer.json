@@ -1,5 +1,9 @@
 {
-    "require": {
-        "amphp/amp": "^2.4"
+  "name": "militska/phpexp",
+  "description": "experiments, just for fun",
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
     }
+  }
 }

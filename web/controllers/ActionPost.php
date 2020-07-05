@@ -1,16 +1,15 @@
 <?php
 
-namespace web\controllers;
+namespace app\web\controllers;
 
 
-use mysqli;
-use PDO;
-use src\MariaDbConnect;
+use app\src\MariaDbConnect;
 
-class ActionPost {
+class ActionPost
+{
 
 
-        public function __toString()
+    public function __toString()
     {
 
         try {
@@ -18,7 +17,7 @@ class ActionPost {
             $link = $conect->getConnect();
             $sql = 'SELECT * FROM test';
             foreach ($link->query($sql) as $row) {
-               var_export($row);
+                var_export($row);
             }
 
             echo "Соединение с MySQL установлено!" . PHP_EOL;
@@ -27,8 +26,7 @@ class ActionPost {
             mysqli_close($link);
 
 
-        } catch (\Exception $e)
-        {
+        } catch (\Exception $e) {
             var_export($e);
         }
 
