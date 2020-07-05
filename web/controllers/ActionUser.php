@@ -1,5 +1,5 @@
 <?php
-namespace web\controllers;
+namespace app\web\controllers;
 
 class ActionUser {
 

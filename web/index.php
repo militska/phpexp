@@ -1,13 +1,13 @@
 <?php
-require_once "../autoload.php";
+//require_once "../autoload.php";
+require_once '../vendor/autoload.php';
 
-use src\Router;
-use web\controllers\ActionUser;
-use web\controllers\ActionPost;
+use app\src\Router;
+
 
 $router = new Router(__DIR__ . '/config.php');
 
-$name = 'web\controllers\Action' . $router->getClass();
+$name = 'app\web\controllers\Action' . $router->getClass();
 
 echo (new $name());
 
