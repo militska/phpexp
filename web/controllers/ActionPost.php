@@ -5,10 +5,16 @@ namespace app\web\controllers;
 
 use app\src\MariaDbConnect;
 
+/**
+ * Class ActionPost
+ * @package app\web\controllers
+ */
 class ActionPost
 {
 
-
+    /***
+     * @return string
+     */
     public function __toString()
     {
 
